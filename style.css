@@ -30,7 +30,7 @@
 .tinycircle{
 	width: 6px;
 	height: 6px;
-	background: white;
+	background: grey;
 	border-radius: 50%;
 	display: inline-block;
 	margin-right: 1%;
