@@ -1,0 +1,40 @@
+
+.circle {
+	width: 20px;
+	height: 20px;
+	background: white;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 5%;
+	margin-top: auto;
+	margin-bottom: auto;
+	border:2px solid black;
+}
+.center{
+	text-align: center;
+
+}
+.divblock{
+	display: block;
+	margin: auto;
+	width: 60%;
+}
+.rownum{
+	margin-right: 25%;
+	display:inline-block;
+}
+.spacer{
+	display: inline-block;
+	width: 5%;
+}
+.tinycircle{
+	width: 6px;
+	height: 6px;
+	background: white;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 1%;
+	margin-top: auto;
+	margin-bottom: auto;
+	border:2px solid black;
+}
