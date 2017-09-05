@@ -89,7 +89,7 @@ $(document).ready(function(){
 		$("div.answer:eq("+i+")").css("background-color",colorarray[i]);
 	}
 })
-
+//error black registering before white
 function score(guessed){
 	var whitepeg = 0;//score holder, denotes perfect match
 	var blackpeg =0;//score holder, denotes right color wrong location
@@ -97,6 +97,9 @@ function score(guessed){
 	for (var i = 0; i < guessed.length; i++) {
 		if (guessed[i] == colorarray[i]){
 			whitepeg ++ //exact match equal white peg
+			if(scorearray[i] == 1){
+				blackpeg --;
+			}
 			scorearray[i] = 1;
 		}
 		else{//if not exact compare to all other pegs
