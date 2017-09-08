@@ -14,6 +14,7 @@ var keyarray = [key1,key2,key3,key4,key5]; //used for score tracking
 var pegscore = [0,0]; // return value
 var colorarray = ["rgb(0, 0, 0)","rgb(0, 0, 0)","rgb(0, 0, 0)","rgb(0, 0, 0)","rgb(0, 0, 0)"]
 
+
 //ran on button click
 //changes orb color on each guess and calls score function to display how close guess is
 function submitanswer() {
@@ -51,6 +52,14 @@ function submitanswer() {
 		tinyselect++
 	} 
 	timesguessed = timesguessed + 1;
+	if(pegscore[1] == 5){
+		$(".answer").css("display","inline-block");
+		alert("Congradulations!!!!\nYou Win!!!")
+	}
+	if(timesguessed > 8){
+		$(".answer").css("display","inline-block");
+		alert("I'm sorry \nYou have lost!");
+	}
 }
 //for guessing row click rotates color between these, currently [red,green,blue]
 //add more colors later for more difficulty
