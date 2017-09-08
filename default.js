@@ -1,4 +1,4 @@
-var timesguessed = 1; //guess row counter
+var timesguessed = 0; //guess row counter
 var currentcolor = "rgb(255, 255, 255)";
 var circleselect = 0; // targeting circle for color change
 var tinyselect = 0; // targeting tiny circle
@@ -27,20 +27,19 @@ function submitanswer() {
 	guessarray = [color1,color2,color3,color4,color5] // replaces default with actual colors
 	circleselect = timesguessed*5; //pointer for circle
 	//adds color to correct row
-	$("div.circle:eq("+circleselect+")").css("background-color",color1);
+	$("div.target:eq("+circleselect+")").css("background-color",color1);
 	circleselect+=1;
-	$("div.circle:eq("+circleselect+")").css("background-color",color2);
+	$("div.target:eq("+circleselect+")").css("background-color",color2);
 	circleselect+=1;
-	$("div.circle:eq("+circleselect+")").css("background-color",color3);
+	$("div.target:eq("+circleselect+")").css("background-color",color3);
 	circleselect+=1;
-	$("div.circle:eq("+circleselect+")").css("background-color",color4);
+	$("div.target:eq("+circleselect+")").css("background-color",color4);
 	circleselect+=1;
-	$("div.circle:eq("+circleselect+")").css("background-color",color5);
+	$("div.target:eq("+circleselect+")").css("background-color",color5);
 	//calls score function returns values as [black,white]
 	pegscore = score(guessarray);
 	//pointer for tiny score circles
 	tinyselect = timesguessed * 5;
-	tinyselect = tinyselect - 5;
 	//changes color for black tiny circles
 	for (var i = 0; i < pegscore[0]; i++) {
 		$("div.tinycircle:eq("+tinyselect+")").css("background-color","black");
@@ -115,4 +114,12 @@ function score(guessed){
 	}
 	var returnscore = [blackpeg,whitepeg]
 	return returnscore;
+}
+function show(){
+	if($(".answer").css("display") == "none"){
+		$(".answer").css("display","inline-block");
+	}
+	else{
+		$(".answer").css("display","none");
+	}
 }
